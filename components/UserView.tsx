@@ -3,7 +3,6 @@ import { SERVICES, LOYALTY_THRESHOLD } from '../constants';
 import { Service, Booking, Client, BookingStatus } from '../types';
 import { saveBooking, saveClient, incrementVisits, getSettings, getBookings } from '../services/storageService';
 import { Button, Card, Badge, Input, Label } from './UI';
-import { GeminiAssistant } from './GeminiAssistant';
 
 interface UserViewProps {
   currentUser: Client | null;
@@ -135,7 +134,17 @@ export const UserView: React.FC<UserViewProps> = ({ currentUser, setCurrentUser,
               className={`cursor-pointer transition-all hover:border-primary ${selectedService?.id === service.id ? 'ring-2 ring-primary border-transparent' : ''}`}
             >
               <div className="flex gap-4" onClick={() => setSelectedService(service)}>
-                <img src={service.imageUrl} alt={service.name} className="w-20 h-20 rounded-lg object-cover" />
+                <div className="w-20 h-20 flex-shrink-0 rounded-lg overflow-hidden bg-slate-800">
+                   <img 
+                      src={service.imageUrl} 
+                      alt={service.name} 
+                      className="w-full h-full object-cover"
+                      onError={(e) => {
+                        (e.target as HTMLImageElement).style.display = 'none';
+                        (e.target as HTMLImageElement).parentElement!.innerHTML = '<div class="w-full h-full flex items-center justify-center bg-slate-700 text-xs text-slate-400">Нет фото</div>';
+                      }}
+                   />
+                </div>
                 <div className="flex-1">
                   <div className="flex justify-between items-start">
                     <h3 className="font-bold text-white">{service.name}</h3>
@@ -258,8 +267,6 @@ export const UserView: React.FC<UserViewProps> = ({ currentUser, setCurrentUser,
           </div>
         </div>
       )}
-
-      <GeminiAssistant />
     </div>
   );
 };
