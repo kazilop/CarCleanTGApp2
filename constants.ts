@@ -8,7 +8,8 @@ export const SERVICES: Service[] = [
     price: 500,
     durationMinutes: 20,
     type: ServiceType.EXPRESS,
-    imageUrl: 'https://picsum.photos/400/300?random=1'
+    // Image: Classic/Old School Car
+    imageUrl: 'https://images.unsplash.com/photo-1532751203331-537820440239?auto=format&fit=crop&w=800&q=80'
   },
   {
     id: 'srv_2',
@@ -17,7 +18,8 @@ export const SERVICES: Service[] = [
     price: 1200,
     durationMinutes: 45,
     type: ServiceType.STANDARD,
-    imageUrl: 'https://picsum.photos/400/300?random=2'
+    // Image: Standard Modern Car Washing
+    imageUrl: 'https://images.unsplash.com/photo-1601362840469-51e4d8d58785?auto=format&fit=crop&w=800&q=80'
   },
   {
     id: 'srv_3',
@@ -26,7 +28,8 @@ export const SERVICES: Service[] = [
     price: 3500,
     durationMinutes: 90,
     type: ServiceType.PREMIUM,
-    imageUrl: 'https://picsum.photos/400/300?random=3'
+    // Image: Luxury Detailing (Black Shiny Car)
+    imageUrl: 'https://images.unsplash.com/photo-1563720223185-11003d516935?auto=format&fit=crop&w=800&q=80'
   },
   {
     id: 'srv_4',
@@ -35,7 +38,8 @@ export const SERVICES: Service[] = [
     price: 15000,
     durationMinutes: 240,
     type: ServiceType.CERAMIC,
-    imageUrl: 'https://picsum.photos/400/300?random=4'
+    // Image: Supercar/High-end (Ceramic Coating vibe)
+    imageUrl: 'https://images.unsplash.com/photo-1617788138017-80ad40651399?auto=format&fit=crop&w=800&q=80'
   }
 ];
 
